@@ -7,9 +7,9 @@ const defaultConfig: Config = {
   name: 'Apollo',
   imgSrc: '//vex-landing.visurel.com/assets/img/layouts/apollo.png',
   layout: 'horizontal',
-  boxed: false,
+  boxed: true,
   sidenav: {
-    title: 'VEX',
+    title: 'GNB',
     imageUrl: 'assets/img/demo/logo.svg',
     showCollapsePin: true,
     state: 'expanded'

@@ -19,7 +19,7 @@ import { ConfigName } from '../@vex/interfaces/config-name.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'vex';
+  title = 'GNB';
 
   constructor(private configService: ConfigService,
               private styleService: StyleService,
