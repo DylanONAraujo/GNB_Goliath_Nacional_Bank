@@ -1,0 +1,99 @@
+.form-card {
+  width: 100%;
+ 
+  &__header {
+    margin-bottom: 2rem;
+  }
+ 
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.35rem;
+    letter-spacing: -0.02em;
+  }
+ 
+  &__subtitle {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+  }
+ 
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+ 
+  &__field {
+    width: 100%;
+ 
+    // Override Angular Material para tema escuro
+    ::ng-deep {
+      .mat-form-field-outline {
+        color: rgba(255, 255, 255, 0.2) !important;
+      }
+      .mat-form-field-outline-thick {
+        color: rgba(124, 58, 237, 0.8) !important;
+      }
+      .mat-form-field-label {
+        color: rgba(255, 255, 255, 0.5) !important;
+      }
+      .mat-input-element {
+        color: #ffffff !important;
+        caret-color: #a78bfa !important;
+      }
+      .mat-form-field-outline-start,
+      .mat-form-field-outline-end,
+      .mat-form-field-outline-gap {
+        border-color: rgba(255, 255, 255, 0.15) !important;
+      }
+      &.mat-focused {
+        .mat-form-field-outline-start,
+        .mat-form-field-outline-end,
+        .mat-form-field-outline-gap {
+          border-color: #7c3aed !important;
+        }
+        .mat-form-field-label { color: #a78bfa !important; }
+      }
+      .mat-icon-button { color: rgba(255,255,255,0.5); }
+    }
+  }
+ 
+  &__forgot {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -0.5rem;
+ 
+    button {
+      font-size: 0.78rem;
+      color: #a78bfa;
+      padding: 0;
+      min-width: unset;
+    }
+  }
+ 
+  &__submit {
+    width: 100%;
+    height: 48px;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #7c3aed, #5b21b6) !important;
+    border-radius: 10px !important;
+    transition: opacity 0.2s, transform 0.2s !important;
+ 
+    &:hover:not(:disabled) {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+ 
+    mat-spinner { margin: 0 auto; }
+ 
+    ::ng-deep .mat-progress-spinner circle {
+      stroke: #fff !important;
+    }
+  }
+}

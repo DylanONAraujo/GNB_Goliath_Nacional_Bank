@@ -1,0 +1,66 @@
+<div class="login-shell">
+ 
+  <!-- FUNDO ANIMADO -->
+  <div class="login-bg">
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+    <svg class="dots-network" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+      <g class="network-lines">
+        <line x1="100" y1="150" x2="300" y2="80"  />
+        <line x1="300" y1="80"  x2="500" y2="200" />
+        <line x1="500" y1="200" x2="680" y2="120" />
+        <line x1="150" y1="350" x2="300" y2="80"  />
+        <line x1="150" y1="350" x2="400" y2="420" />
+        <line x1="400" y1="420" x2="600" y2="380" />
+        <line x1="600" y1="380" x2="680" y2="120" />
+        <line x1="400" y1="420" x2="500" y2="200" />
+        <line x1="200" y1="500" x2="400" y2="420" />
+        <line x1="600" y1="380" x2="700" y2="500" />
+      </g>
+      <g class="network-dots">
+        <circle cx="100" cy="150" r="5" /><circle cx="300" cy="80"  r="7" />
+        <circle cx="500" cy="200" r="5" /><circle cx="680" cy="120" r="6" />
+        <circle cx="150" cy="350" r="5" /><circle cx="400" cy="420" r="8" />
+        <circle cx="600" cy="380" r="5" /><circle cx="200" cy="500" r="4" />
+        <circle cx="700" cy="500" r="5" />
+      </g>
+    </svg>
+  </div>
+ 
+  <div class="login-left">
+    <div class="login-brand">
+      <span class="login-brand__logo">◈</span>
+      <span class="login-brand__name">GNB</span>
+    </div>
+    <h1 class="login-left__headline">
+      Gestão financeira<br>
+      <span class="login-left__highlight">inteligente.</span>
+    </h1>
+    <p class="login-left__desc">
+      Acesse o backoffice completo do seu banco.<br>
+      Segurança e controle em um só lugar.
+    </p>
+    <div class="login-left__badges">
+      <span class="badge">🔒 Criptografia ponta a ponta</span>
+      <span class="badge">⚡ Tempo real</span>
+      <span class="badge">📊 Analytics</span>
+    </div>
+  </div>
+ 
+  <div class="login-right">
+    <div class="login-card">
+      <vex-account-form
+        title="Bem-vindo de volta"
+        subtitle="Entre com suas credenciais de acesso"
+        submitLabel="Acessar sistema"
+        [showPassword]="true"
+        [showEmail]="true"
+        [showForgotPassword]="true"
+        (formSubmit)="onFormSubmit($event)"
+        (forgotPasswordClick)="onForgotPassword()">
+      </vex-account-form>
+    </div>
+  </div>
+ 
+</div>

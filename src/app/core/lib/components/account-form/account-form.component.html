@@ -1,0 +1,46 @@
+<div class="form-card" @fadeInUp>
+ 
+  <div class="form-card__header">
+    <h2 class="form-card__title">{{ title }}</h2>
+    <p class="form-card__subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+  </div>
+ 
+  <form [formGroup]="form" (ngSubmit)="send()" class="form-card__form">
+ 
+
+    <mat-form-field *ngIf="showEmail" appearance="outline" class="form-card__field">
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email" type="email" autocomplete="email" />
+      <mat-error *ngIf="form.get('email')?.hasError('required')">E-mail obrigatório</mat-error>
+      <mat-error *ngIf="form.get('email')?.hasError('email')">E-mail inválido</mat-error>
+    </mat-form-field>
+ 
+
+    <mat-form-field *ngIf="showPassword" appearance="outline" class="form-card__field">
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="password" [type]="inputType" autocomplete="current-password" />
+      <button mat-icon-button type="button" matSuffix (click)="toggleVisibility()">
+        <mat-icon [icIcon]="visible ? icVisibilityOff : icVisibility"></mat-icon>
+      </button>
+      <mat-error *ngIf="form.get('password')?.hasError('required')">Senha obrigatória</mat-error>
+    </mat-form-field>
+ 
+
+    <div *ngIf="showForgotPassword" class="form-card__forgot">
+      <button type="button" mat-button color="primary" (click)="onForgotPassword()">
+        Esqueceu a senha?
+      </button>
+    </div>
+ 
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="form-card__submit"
+      [disabled]="loading">
+      <span *ngIf="!loading">{{ submitLabel }}</span>
+      <mat-spinner *ngIf="loading" diameter="22"></mat-spinner>
+    </button>
+ 
+  </form>
+</div>

@@ -1,13 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CustomLayoutComponent } from './custom-layout/custom-layout.component';
 
 const routes: Routes = [
+
   {
-    path: '',
-    component: CustomLayoutComponent,
-    children: []
-  }
+    path: 'login',
+    loadChildren: () =>
+      import('./views/pages/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () =>
+      import('./views/pages/forgot-password/forgot-password.module')
+        .then(m => m.ForgotPasswordModule)
+  },
+  {
+    path: 'custom-layout',
+    loadChildren: () =>
+      import('./views/custom-layout/custom-layout.module')
+        .then(m => m.CustomLayoutModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
+  },
+  
 ];
 
 @NgModule({
