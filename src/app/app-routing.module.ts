@@ -15,7 +15,7 @@ const routes: Routes = [
         .then(m => m.ForgotPasswordModule)
   },
   {
-    path: 'custom-layout',
+    path: '',
     loadChildren: () =>
       import('./views/custom-layout/custom-layout.module')
         .then(m => m.CustomLayoutModule)

@@ -8,11 +8,8 @@ import { FooterModule } from '../../../@vex/layout/footer/footer.module';
 import { ConfigPanelModule } from '../../../@vex/components/config-panel/config-panel.module';
 import { SidebarModule } from '../../../@vex/components/sidebar/sidebar.module';
 import { QuickpanelModule } from '../../../@vex/layout/quickpanel/quickpanel.module';
-import { Routes } from '@angular/router';
+import { CoustomLayoutRoutingModule } from './coustom-layout-routing.module';
 
-const routes: Routes = [
-  { path: '', component: CustomLayoutComponent }
-];
 
 @NgModule({
   declarations: [CustomLayoutComponent],
@@ -24,7 +21,8 @@ const routes: Routes = [
     FooterModule,
     ConfigPanelModule,
     SidebarModule,
-    QuickpanelModule
+    QuickpanelModule,
+    CoustomLayoutRoutingModule,
   ]
 })
 export class CustomLayoutModule {

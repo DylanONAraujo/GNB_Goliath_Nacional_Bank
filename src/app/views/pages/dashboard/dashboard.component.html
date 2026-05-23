@@ -1,19 +1,34 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<div class="dashboard">
+
+  <!-- Card de ações GNB -->
+  <div class="panel">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="panel_title">Ações GNB</mat-card-title>
+        <mat-card-subtitle class="panel_subtitle">Cotações simuladas</mat-card-subtitle>
+      </mat-card-header>
+
+      <div class="stocks-list">
+        <div class="stock-item" *ngFor="let stock of stocks">
+          <div class="stock-item__info">
+            <span class="stock-item__ticker">{{ stock.ticker }}</span>
+            <span class="stock-item__name">{{ stock.name }}</span>
+          </div>
+          <div class="stock-item__right">
+            <span class="stock-item__value">R$ {{ stock.value.toFixed(2) }}</span>
+            <span class="stock-item__change"
+              [class.positive]="stock.positive"
+              [class.negative]="!stock.positive">
+              {{ stock.positive ? '▲' : '▼' }}
+              {{ stock.change > 0 ? '+' : '' }}{{ stock.change.toFixed(2) }}%
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </mat-card>
+
+  </div>
+
+</div>

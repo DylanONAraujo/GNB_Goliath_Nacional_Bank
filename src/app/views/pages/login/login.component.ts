@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     onFormSubmit(data: { email: string; password: string }) {
     // Mock: qualquer credencial loga
     if (data.email && data.password) {
-      this.router.navigate(['/custom-layout']);
+      this.router.navigate(['/dashboard']);
     } else {
       this.snackbar.open('Credenciais inválidas', 'Fechar', { duration: 1500 });
     }
